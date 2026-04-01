@@ -5,19 +5,17 @@ import Link from "next/link";
 import styles from "./BrandGrid.module.css";
 
 const brands = [
-  { name: "Maruti Suzuki", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/maruti-suzuki.jpg" },
-  { name: "Tata", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/tata.jpg" },
-  { name: "Mahindra", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/mahindra.jpg" },
-  { name: "Hyundai", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/hyundai.jpg" },
-  { name: "Toyota", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/toyota.jpg" },
-  { name: "Kia", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/kia.jpg" },
-  { name: "Skoda", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/skoda.jpg" },
-  { name: "BMW", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/bmw.jpg" },
-  { name: "Volkswagen", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/volkswagen.jpg" },
-  { name: "Mercedes-Benz", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/mercedes-benz.jpg" },
-  { name: "MG", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/mg.jpg" },
-  { name: "Audi", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/audi.jpg" },
-  { name: "Tesla", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/tesla.jpg" }
+  { name: "Maruti Suzuki", slug: "maruti-suzuki", logo: "/images/brands/maruti-suzuki.jpg" },
+  { name: "Tata", slug: "tata", logo: "/images/brands/tata.jpg" },
+  { name: "Mahindra", slug: "mahindra", logo: "/images/brands/mahindra.jpg" },
+  { name: "Hyundai", slug: "hyundai", logo: "/images/brands/hyundai.jpg" },
+  { name: "Toyota", slug: "toyota", logo: "/images/brands/toyota.jpg" },
+  { name: "Kia", slug: "kia", logo: "/images/brands/kia.jpg" },
+  { name: "BMW", slug: "bmw", logo: "/images/brands/bmw.jpg" },
+  { name: "Volkswagen", slug: "volkswagen", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/volkswagen.jpg" },
+  { name: "Mercedes-Benz", slug: "mercedes-benz", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/mercedes-benz.jpg" },
+  { name: "Audi", slug: "audi", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/audi.jpg" },
+  { name: "Tesla", slug: "tesla", logo: "https://stimg.cardekho.com/pwa/img/brandLogo_168x84/tesla.jpg" }
 ];
 
 export default function BrandGrid() {
@@ -32,7 +30,7 @@ export default function BrandGrid() {
         <div className={styles.grid}>
           {brands.map((brand) => (
             <Link 
-              href={`/search?q=${brand.name}`} 
+              href={`/brand/${brand.slug}`} 
               key={brand.name} 
               className={styles.brandCard}
             >

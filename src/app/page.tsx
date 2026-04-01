@@ -11,36 +11,40 @@ import { ChevronRight, ArrowRight, Star, Clock, Trophy, Tag, Zap, ShieldCheck, H
 export default function Home() {
   const sections = [
     { 
+      slug: "trending",
       title: "Trending Cars this Month", 
       badge: "POPULAR",
       cars: [
-        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/Scorpio-N/10817/1690351800434/front-left-side-47.jpg" },
-        { slug: "hyundai-creta", name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/10543/1689601004345/front-left-side-47.jpg" },
-        { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Volkswagen/Virtus/10834/1690358400434/front-left-side-47.jpg" },
-        { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV/10852/1690365004345/front-left-side-47.jpg" }
+        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "/images/cars/scorpio-n.jpg" },
+        { slug: "hyundai-creta", name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" },
+        { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600" },
+        { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
+      slug: "budget",
       title: "Best Cars Under ₹10 Lakhs", 
       badge: "BUDGET",
       cars: [
-        { slug: "tata-punch", name: "Tata Punch", price: "₹6.13 - ₹10.20 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600" },
-        { slug: "hyundai-exter", name: "Hyundai Exter", price: "₹6.13 - ₹10.28 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbac0?auto=format&fit=crop&q=80&w=600" },
+        { slug: "tata-punch", name: "Tata Punch", price: "₹6.13 - ₹10.20 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600" },
+        { slug: "hyundai-exter", name: "Hyundai Exter", price: "₹6.13 - ₹10.28 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&q=80&w=600" },
         { slug: "maruti-suzuki-fronx", name: "Maruti Suzuki Fronx", price: "₹7.51 - ₹13.04 Lakh", type: "Compact", rating: 4.3, img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=600" },
         { slug: "nissan-magnite", name: "Nissan Magnite", price: "₹6.00 - ₹11.11 Lakh", type: "SUV", rating: 4.2, img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
+      slug: "modern",
       title: "Best Cars Between ₹10 - ₹20 Lakhs", 
       badge: "MODERN",
       cars: [
         { slug: "kia-seltos", name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600" },
-        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" },
+        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "/images/cars/scorpio-n.jpg" },
         { slug: "volkswagen-taigun", name: "Volkswagen Taigun", price: "₹11.70 - ₹20.00 Lakh", type: "SUV", rating: 4.6, img: "https://images.unsplash.com/photo-1587652758178-5d259e87909a?auto=format&fit=crop&q=80&w=600" },
         { slug: "maruti-grand-vitara", name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
+      slug: "premium",
       title: "Best Cars Between ₹20 - ₹30 Lakhs", 
       badge: "PREMIUM",
       cars: [
@@ -85,7 +89,7 @@ export default function Home() {
                 <span style={{ fontSize: "0.75rem", fontWeight: "900", color: "var(--primary)", letterSpacing: "1px", textTransform: "uppercase" }}>{section.badge}</span>
                 <h2 className="h2">{section.title}</h2>
               </div>
-              <Link href={`/search?q=${section.title}`} className="btn btn-outline" style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+              <Link href={`/discover/${section.slug}`} className="btn btn-outline" style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
                 View All <ArrowRight size={16} />
               </Link>
             </div>
@@ -146,51 +150,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Live Offers Section */}
-      <section className="section-padding">
-        <div className="container">
-          <h2 className="h2" style={{ marginBottom: "2.5rem" }}>Best Offers & Deals</h2>
-          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "2rem" }}>
-            {offers.map(offer => (
-              <div key={offer.title} className="card" style={{ display: "flex", gap: "1.5rem", padding: "1.5rem", border: `1px solid ${offer.color}40` }}>
-                <div style={{ width: "48px", height: "48px", backgroundColor: `${offer.color}20`, color: offer.color, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                   <Tag size={20} />
-                </div>
-                <div>
-                   <h3 className="h3" style={{ fontSize: "1.1rem" }}>{offer.title}</h3>
-                   <p className="text-muted" style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>{offer.desc}</p>
-                   <button style={{ background: "none", border: "none", padding: 0, marginTop: "1rem", color: offer.color, fontWeight: "800", fontSize: "0.85rem", cursor: "pointer" }}>VIEW DEAL <ChevronRight size={14} /></button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Cars - Homepage Widget */}
-      <section className="section-padding" style={{ backgroundColor: "var(--surface-low)" }}>
-         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
-           <div style={{ flex: 1, minWidth: "300px" }}>
-              <h2 className="h2">Upcoming Car Launches</h2>
-              <p className="text-muted" style={{ marginTop: "1rem" }}>Be the first to own the latest technology. Zero compromise driving awaits.</p>
-              <Link href="/upcoming-cars" className="btn btn-primary" style={{ marginTop: "2rem", display: "inline-flex" }}>View Launch Calendar</Link>
-           </div>
-           <div style={{ flex: 1.5, minWidth: "400px" }}>
-              <div className="grid" style={{ gridTemplateColumns: "1fr", gap: "1rem" }}>
-                {upcomingCars.map(car => (
-                  <div key={car.title} className="card-sm" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1rem 1.5rem", backgroundColor: "var(--white)", borderRadius: "var(--radius-md)", border: "1px solid var(--border)" }}>
-                    <div>
-                      <h4 style={{ fontWeight: "800", fontSize: "1rem" }}>{car.title}</h4>
-                      <p style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.25rem" }}>{car.date}</p>
-                    </div>
-                    <span style={{ fontSize: "0.75rem", fontWeight: "900", color: "var(--primary)" }}>{car.status}</span>
-                  </div>
-                ))}
-              </div>
-           </div>
-         </div>
       </section>
 
       <Footer />
