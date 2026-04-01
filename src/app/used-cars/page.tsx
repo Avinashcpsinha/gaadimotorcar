@@ -1,10 +1,14 @@
+"use client";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function UsedCars() {
   return (
     <main>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <div className="section-padding" style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--white)" }}>
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="h1" style={{ color: "var(--secondary)", marginBottom: "1.5rem" }}>Used Cars in India</h1>

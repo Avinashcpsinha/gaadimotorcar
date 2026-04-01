@@ -1,10 +1,14 @@
+"use client";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function Reviews() {
   return (
     <main>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <div className="section-padding" style={{ minHeight: "60vh", background: "var(--surface-low)" }}>
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="h2" style={{ marginBottom: "2rem" }}>Latest Reviews & In-Depth News</h1>
