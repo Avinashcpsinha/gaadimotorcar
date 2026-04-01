@@ -22,7 +22,7 @@ const newCars = [
   { slug: "maruti-suzuki-swift", name: "Maruti Suzuki Swift", brand: "Maruti Suzuki", logo: "/images/brands/maruti-suzuki.jpg", price: "₹6.49 - ₹9.64 Lakh", type: "Hatchback", fuel: "Petrol", rating: 4.6, img: "https://images.unsplash.com/photo-1567818738222-77732f913d0c?auto=format&fit=crop&q=80&w=600" }
 ];
 
-export default function ExploreNewCars() {
+function NewCarsContent() {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
@@ -33,79 +33,87 @@ export default function ExploreNewCars() {
   });
 
   return (
+    <section className="section-padding" style={{ backgroundColor: "var(--surface-low)", minHeight: "100vh" }}>
+      <div className="container">
+        <div style={{ marginBottom: "3rem" }}>
+          <h1 className="h1">Explore New Cars in India</h1>
+          <p className="text-muted" style={{ marginTop: "0.5rem" }}>Found {filteredCars.length} models matching your preference for April 2026.</p>
+        </div>
+
+        {/* Filter Bar */}
+        <div className="card" style={{ padding: "1.5rem", marginBottom: "3rem", display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              {["all", "SUV", "Sedan", "Hatchback", "EV"].map(cat => (
+                <button 
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`btn ${filter === cat ? "btn-primary" : "btn-outline"}`}
+                  style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}
+                >
+                  {cat}
+                </button>
+              ))}
+           </div>
+           <div style={{ position: "relative", flex: 1, maxWidth: "400px" }}>
+              <Search size={18} style={{ position: "absolute", left: "1rem", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }} />
+              <input 
+                type="text" 
+                placeholder="Search by brand or model..." 
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                style={{ width: "100%", padding: "0.75rem 1rem 0.75rem 3rem", borderRadius: "10px", border: "1px solid var(--border)", backgroundColor: "var(--white)" }} 
+              />
+           </div>
+        </div>
+
+        {/* Results Grid */}
+        <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
+          {filteredCars.map((car) => (
+            <div key={car.slug} className="card h-full" style={{ padding: "0", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div style={{ aspectRatio: "16/9", overflow: "hidden", position: "relative" }}>
+                 <img src={car.img} alt={car.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                 <div style={{ position: "absolute", top: "1rem", left: "1rem", width: "40px", height: "40px", backgroundColor: "white", borderRadius: "8px", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-md)" }}>
+                    <img src={car.logo} alt={car.brand} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                 </div>
+              </div>
+              <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                 <div>
+                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
+                      <span style={{ fontSize: "0.7rem", fontWeight: "900", color: "var(--primary)" }}>{car.type} • {car.fuel}</span>
+                      <span style={{ display: "flex", alignItems: "center", gap: "0.25rem", fontWeight: "700", fontSize: "0.85rem", color: "#10b981" }}>
+                         <Star size={12} fill="#10b981" /> {car.rating}
+                      </span>
+                   </div>
+                   <h3 className="h3" style={{ fontSize: "1.2rem" }}>{car.name}</h3>
+                   <p style={{ fontWeight: "800", color: "var(--secondary)", marginTop: "0.25rem", fontSize: "1rem" }}>{car.price}</p>
+                 </div>
+                 <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.5rem" }}>
+                    <Link href={`/car/${car.slug}`} className="btn btn-primary" style={{ flex: 1, textAlign: "center", fontSize: "0.85rem" }}>Dedicated Info</Link>
+                    <button className="btn btn-outline" style={{ flex: 1, fontSize: "0.85rem" }}>Get Quotes</button>
+                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredCars.length === 0 && (
+           <div style={{ textAlign: "center", padding: "5rem 0" }}>
+             <h3 className="h3 text-muted">No cars found matching "{search}"</h3>
+             <button onClick={() => {setFilter("all"); setSearch("");}} className="btn btn-primary" style={{ marginTop: "1.5rem" }}>Reset Filters</button>
+           </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+export default function ExploreNewCars() {
+  return (
     <main>
       <Header />
-      <section className="section-padding" style={{ backgroundColor: "var(--surface-low)", minHeight: "100vh" }}>
-        <div className="container">
-          <div style={{ marginBottom: "3rem" }}>
-            <h1 className="h1">Explore New Cars in India</h1>
-            <p className="text-muted" style={{ marginTop: "0.5rem" }}>Found {filteredCars.length} models matching your preference for April 2026.</p>
-          </div>
-
-          {/* Filter Bar */}
-          <div className="card" style={{ padding: "1.5rem", marginBottom: "3rem", display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
-             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                {["all", "SUV", "Sedan", "Hatchback", "EV"].map(cat => (
-                  <button 
-                    key={cat}
-                    onClick={() => setFilter(cat)}
-                    className={`btn ${filter === cat ? "btn-primary" : "btn-outline"}`}
-                    style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}
-                  >
-                    {cat}
-                  </button>
-                ))}
-             </div>
-             <div style={{ position: "relative", flex: 1, maxWidth: "400px" }}>
-                <Search size={18} style={{ position: "absolute", left: "1rem", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }} />
-                <input 
-                  type="text" 
-                  placeholder="Search by brand or model..." 
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  style={{ width: "100%", padding: "0.75rem 1rem 0.75rem 3rem", borderRadius: "10px", border: "1px solid var(--border)", backgroundColor: "var(--white)" }} 
-                />
-             </div>
-          </div>
-
-          {/* Results Grid */}
-          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
-            {filteredCars.map((car) => (
-              <div key={car.slug} className="card h-full" style={{ padding: "0", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ aspectRatio: "16/9", overflow: "hidden", position: "relative" }}>
-                   <img src={car.img} alt={car.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                   <div style={{ position: "absolute", top: "1rem", left: "1rem", width: "40px", height: "40px", backgroundColor: "white", borderRadius: "8px", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-md)" }}>
-                      <img src={car.logo} alt={car.brand} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-                   </div>
-                </div>
-                <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                   <div>
-                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
-                        <span style={{ fontSize: "0.7rem", fontWeight: "900", color: "var(--primary)" }}>{car.type} • {car.fuel}</span>
-                        <span style={{ display: "flex", alignItems: "center", gap: "0.25rem", fontWeight: "700", fontSize: "0.85rem", color: "#10b981" }}>
-                           <Star size={12} fill="#10b981" /> {car.rating}
-                        </span>
-                     </div>
-                     <h3 className="h3" style={{ fontSize: "1.2rem" }}>{car.name}</h3>
-                     <p style={{ fontWeight: "800", color: "var(--secondary)", marginTop: "0.25rem", fontSize: "1rem" }}>{car.price}</p>
-                   </div>
-                   <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.5rem" }}>
-                      <Link href={`/car/${car.slug}`} className="btn btn-primary" style={{ flex: 1, textAlign: "center", fontSize: "0.85rem" }}>Dedicated Info</Link>
-                      <button className="btn btn-outline" style={{ flex: 1, fontSize: "0.85rem" }}>Get Quotes</button>
-                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filteredCars.length === 0 && (
-             <div style={{ textAlign: "center", padding: "5rem 0" }}>
-               <h3 className="h3 text-muted">No cars found matching "{search}"</h3>
-               <button onClick={() => {setFilter("all"); setSearch("");}} className="btn btn-primary" style={{ marginTop: "1.5rem" }}>Reset Filters</button>
-             </div>
-          )}
-        </div>
-      </section>
+      <Suspense fallback={<div className="container section-padding">Refining Master Fleet...</div>}>
+         <NewCarsContent />
+      </Suspense>
       <Footer />
     </main>
   );
