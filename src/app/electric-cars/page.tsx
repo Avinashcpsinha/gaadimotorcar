@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Battery, Zap, Timer, Leaf, ChevronRight, Star } from "lucide-react";
@@ -15,7 +16,9 @@ export default function ElectricCars() {
 
   return (
     <main>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       
       {/* Premium Hero Section for Electric Cars */}
       <section className="section-padding" style={{ 

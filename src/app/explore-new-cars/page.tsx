@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, ChevronRight, Star, Tag, Landmark } from "lucide-react";
@@ -16,7 +17,9 @@ export default function ExploreNewCars() {
 
   return (
     <main>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       
       <section className="section-padding" style={{ backgroundColor: "var(--surface)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">

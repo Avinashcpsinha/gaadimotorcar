@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Clock, Calendar, Bell, ChevronRight } from "lucide-react";
@@ -15,7 +16,9 @@ export default function UpcomingCars() {
 
   return (
     <main>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       
       <section className="section-padding" style={{ background: "var(--surface)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
