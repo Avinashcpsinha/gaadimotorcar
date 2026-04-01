@@ -1,0 +1,139 @@
+.header {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  width: fit-content;
+}
+
+.tab {
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab.activeTab {
+  color: var(--primary);
+}
+
+.tab.activeTab::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.tab:hover {
+  color: var(--primary);
+}
+
+.carouselGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.carCard {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.carCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px -5px rgba(0,0,0,0.1);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.carImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carCard:hover .carImage {
+  transform: scale(1.08);
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255,255,255,0.9);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fbbf24;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .carouselGrid {
+    grid-template-columns: 1fr;
+  }
+}
