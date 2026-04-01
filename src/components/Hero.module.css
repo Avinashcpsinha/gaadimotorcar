@@ -1,11 +1,11 @@
 .hero {
-  height: 90vh;
+  height: 85vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--secondary); /* Dark fallback for white text */
+  background-color: var(--secondary);
 }
 
 .imageOverlay {
@@ -20,7 +20,7 @@
 .bgImage {
   object-fit: cover;
   transition: transform 10s ease-out;
-  opacity: 0.8; /* Make it slightly darker for better text contrast */
+  opacity: 0.7;
 }
 
 .hero:hover .bgImage {
@@ -33,7 +33,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
   z-index: 2;
 }
 
@@ -43,130 +43,171 @@
   color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 .textContent {
   max-width: 800px;
   animation: fadeIn 0.8s ease-out forwards;
-  color: var(--white);
 }
 
 .textContent h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
   letter-spacing: -1.5px;
-  font-size: 4rem;
+  font-family: var(--font-display);
 }
 
 .textContent p {
-  font-size: 1.4rem;
-  opacity: 0.95;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  opacity: 0.9;
   font-weight: 500;
 }
 
 .searchCard {
   background: var(--white);
   border-radius: var(--radius-xl);
-  padding: 1rem;
+  padding: 1.5rem;
   box-shadow: var(--shadow-xl);
   width: 100%;
   max-width: 1000px;
   color: var(--text-main);
   animation: fadeIn 1s ease-out forwards;
-}
-
-.tabs {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-bottom: 2px solid var(--surface);
-  margin-bottom: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.tab {
-  padding: 0.75rem 1.75rem;
+.topRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.toggle {
+  display: flex;
+  background: var(--surface);
+  border-radius: var(--radius-full);
+  padding: 0.25rem;
+  min-width: 120px;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
   font-weight: 700;
-  font-size: 1.1rem;
   color: var(--text-muted);
-  border-radius: var(--radius-lg);
   transition: all 0.2s ease;
 }
 
-.tab.active {
-  color: var(--primary);
-  background: rgba(238, 35, 38, 0.05);
-}
-
-.tab:hover {
-  color: var(--primary);
-}
-
-.searchFields {
-  display: flex;
-  gap: 1.5rem;
-  padding: 0 1rem 1rem;
-  align-items: flex-end;
-}
-
-.field {
-  flex: 1;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.field label {
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
-}
-
-.field select {
-  padding: 0.85rem 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  font-size: 1rem;
-  font-weight: 600;
-  background: var(--surface-low);
-  width: 100%;
-  appearance: none;
-}
-
-.searchBtn {
-  background: var(--primary);
+.toggleBtn.active {
+  background: #008296; /* Teal common in CarWale/CarDekho */
   color: var(--white);
-  padding: 0.85rem 2.5rem;
-  border-radius: var(--radius-md);
-  font-weight: 700;
+}
+
+.mainSearch {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  height: 52px;
+}
+
+.mainSearch input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.searchIcon {
+  color: var(--text-muted);
+}
+
+.cityLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  border-left: 1px solid var(--border);
+  padding: 0 1rem;
+  white-space: nowrap;
+}
+
+.cityLink:hover {
+  color: var(--primary);
+}
+
+.filterRow {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.filterPill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
   transition: all 0.2s ease;
 }
 
-.searchBtn:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(238, 35, 38, 0.3);
+.filterPill:hover {
+  background: var(--surface-low);
+  border-color: var(--primary);
+}
+
+.iconBox {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7f9;
+  border-radius: 4px;
+  color: #008296;
+}
+
+.filterPillAll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: #fdf2f2;
+  border: 1px solid #fee2e2;
+  border-radius: var(--radius-md);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.filterPillAll:hover {
+  background: #fee2e2;
 }
 
 .quickLinks {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 1rem 1rem 0.5rem;
-}
-
-.quickLinks span {
+  gap: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .quickLinks a {
@@ -178,25 +219,30 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 900px) {
-  .searchFields {
+  .topRow {
     flex-direction: column;
-    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
   }
   
-  .searchBtn {
+  .toggle {
     width: 100%;
   }
   
-  .tabs {
+  .cityLink {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+    width: 100%;
     justify-content: center;
   }
   
   .textContent h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
