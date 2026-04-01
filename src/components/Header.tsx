@@ -1,15 +1,41 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Search, MapPin, User, Menu, X, ChevronDown, Landmark, Battery, Zap, Timer, HelpCircle } from "lucide-react";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
   const [city, setCity] = useState("Select City");
   const [showCityModal, setShowCityModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   
   const cities = ["New Delhi", "Mumbai", "Bangalore", "Pune", "Hyderabad", "Chennai", "Kolkata", "Ahmedabad", "Jaipur", "Lucknow"];
+
+  // Sync city with localStorage for persistence across pages
+  useEffect(() => {
+    const savedCity = localStorage.getItem("userCity");
+    if (savedCity) setCity(savedCity);
+  }, []);
+
+  const handleCitySelect = (selectedCity: string) => {
+    setCity(selectedCity);
+    localStorage.setItem("userCity", selectedCity);
+    setShowCityModal(false);
+    // Refresh for any city-specific content
+    router.refresh();
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -20,21 +46,21 @@ export default function Header() {
           </Link>
           <nav className={styles.nav}>
             <div className={styles.navItem}>
-              <Link href="/new-cars">NEW CARS <ChevronDown size={14} /></Link>
+              <Link href="/explore-new-cars">NEW CARS <ChevronDown size={14} /></Link>
               <div className={styles.dropdown}>
                 <div className={styles.dropdownInner}>
                   <div className={styles.dropdownCol}>
                     <p className={styles.colTitle}>Popular</p>
-                    <Link href="/new-cars">Explore New Cars</Link>
-                    <Link href="/new-cars">Electric Cars</Link>
-                    <Link href="/new-cars">Upcoming Cars</Link>
-                    <Link href="/new-cars">New Launches</Link>
+                    <Link href="/explore-new-cars">Explore New Cars</Link>
+                    <Link href="/electric-cars">Electric Cars</Link>
+                    <Link href="/upcoming-cars">Upcoming Cars</Link>
+                    <Link href="/search?q=new launches">New Launches</Link>
                   </div>
                   <div className={styles.dropdownCol}>
                     <p className={styles.colTitle}>Tools</p>
-                    <Link href="/new-cars">Compare Cars</Link>
-                    <Link href="/new-cars">Find Dealers</Link>
-                    <Link href="/new-cars">Offers & Discounts</Link>
+                    <Link href="/compare-cars">Compare Cars</Link>
+                    <Link href="/search?q=dealers">Find Dealers</Link>
+                    <Link href="/offers">Offers & Discounts</Link>
                   </div>
                 </div>
               </div>
@@ -47,20 +73,20 @@ export default function Header() {
                   <div className={styles.dropdownCol}>
                     <p className={styles.colTitle}>Buy Used</p>
                     <Link href="/used-cars">Buy Used Cars</Link>
-                    <Link href="/used-cars">Cars in Your City</Link>
-                    <Link href="/used-cars">Certified Cars</Link>
+                    <Link href="/search?q=used cars">Cars in Your City</Link>
+                    <Link href="/search?q=certified cars">Certified Cars</Link>
                   </div>
                   <div className={styles.dropdownCol}>
                     <p className={styles.colTitle}>Sell</p>
                     <Link href="/used-cars">Sell My Car</Link>
-                    <Link href="/used-cars">Car Valuation</Link>
+                    <Link href="/search?q=valuation">Car Valuation</Link>
                   </div>
                 </div>
               </div>
             </div>
             
             <div className={styles.navItem}>
-              <Link href="/news">NEWS & REVIEWS <ChevronDown size={14} /></Link>
+              <Link href="/reviews">NEWS & REVIEWS <ChevronDown size={14} /></Link>
               <div className={styles.dropdown}>
                 <div className={styles.dropdownInner}>
                   <div className={styles.dropdownCol}>
@@ -80,10 +106,17 @@ export default function Header() {
             <MapPin size={18} />
             <span>{city}</span>
           </button>
-          <div className={styles.searchBar}>
-            <input type="text" placeholder="Search Cars..." />
-            <Search size={18} />
-          </div>
+          <form className={styles.searchBar} onSubmit={handleSearch}>
+            <input 
+              type="text" 
+              placeholder="Search Cars..." 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button type="submit" style={{ background: "none", border: "none", cursor: "pointer" }}>
+              <Search size={18} />
+            </button>
+          </form>
           <button className={styles.profileBtn} onClick={() => setShowLoginModal(true)}>
             <User size={20} />
             <span>Login / Register</span>
@@ -107,7 +140,7 @@ export default function Header() {
                 <button 
                   key={c} 
                   className={styles.cityBtn}
-                  onClick={() => { setCity(c); setShowCityModal(false); }}
+                  onClick={() => handleCitySelect(c)}
                 >
                   {c}
                 </button>
