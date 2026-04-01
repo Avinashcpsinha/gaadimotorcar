@@ -1,22 +1,23 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import styles from "./CarCarousel.module.css";
 import { Star, ChevronRight, Fuel, Gauge, Zap } from "lucide-react";
 
 const carouselData = {
   trending: [
-    { name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.8 },
-    { name: "Hyundai Creta", price: "₹11.00 - ₹20.15 Lakh", img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.7 },
-    { name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", img: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600", type: "Sedan", rating: 4.6 }
+    { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.8 },
+    { slug: "hyundai-creta", name: "Hyundai Creta", price: "₹11.00 - ₹20.15 Lakh", img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.7 },
+    { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", img: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600", type: "Sedan", rating: 4.6 }
   ],
   popular: [
-    { name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600", type: "EV", rating: 4.5 },
-    { name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.7 },
-    { name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.4 }
+    { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600", type: "EV", rating: 4.5 },
+    { slug: "kia-seltos", name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.7 },
+    { slug: "maruti-grand-vitara", name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.4 }
   ],
   upcoming: [
-    { name: "Volkswagen Taigun Facelift", price: "₹11.75 Lakh onwards", img: "https://images.unsplash.com/photo-1587652758178-5d259e87909a?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.6 },
-    { name: "Toyota Urban Ebella EV", price: "₹16.00 Lakh onwards", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600", type: "EV", rating: 4.4 }
+    { slug: "volkswagen-taigun", name: "Volkswagen Taigun Facelift", price: "₹11.75 Lakh onwards", img: "https://images.unsplash.com/photo-1587652758178-5d259e87909a?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.6 },
+    { slug: "toyota-ebella", name: "Toyota Urban Ebella EV", price: "₹16.00 Lakh onwards", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600", type: "EV", rating: 4.4 }
   ]
 };
 
@@ -64,7 +65,7 @@ export default function CarCarousel() {
                    <div className={styles.specItem}><Fuel size={14} /> <span>{car.type === "EV" ? "Electric" : "Petrol/Diesel"}</span></div>
                    <div className={styles.specItem}><Zap size={14} /> <span>Automatic</span></div>
                 </div>
-                <button className="btn btn-outline" style={{ width: "100%", marginTop: "1rem" }}>Check Offers</button>
+                <Link href={`/car/${car.slug}`} className="btn btn-outline" style={{ width: "100%", marginTop: "1rem", textAlign: "center", display: "block" }}>View Full Details</Link>
               </div>
             </div>
           ))}

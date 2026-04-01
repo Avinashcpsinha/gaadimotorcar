@@ -14,49 +14,49 @@ export default function Home() {
       title: "Trending Cars this Month", 
       badge: "POPULAR",
       cars: [
-        { name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" },
-        { name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" },
-        { name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600" },
-        { name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600" }
+        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" },
+        { slug: "hyundai-creta", name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" },
+        { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600" },
+        { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
       title: "Best Cars Under ₹10 Lakhs", 
       badge: "BUDGET",
       cars: [
-        { name: "Tata Punch", price: "₹6.13 - ₹10.20 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600" },
-        { name: "Hyundai Exter", price: "₹6.13 - ₹10.28 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbac0?auto=format&fit=crop&q=80&w=600" },
-        { name: "Maruti Suzuki Fronx", price: "₹7.51 - ₹13.04 Lakh", type: "Compact", rating: 4.3, img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=600" },
-        { name: "Nissan Magnite", price: "₹6.00 - ₹11.11 Lakh", type: "SUV", rating: 4.2, img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600" }
+        { slug: "tata-punch", name: "Tata Punch", price: "₹6.13 - ₹10.20 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600" },
+        { slug: "hyundai-exter", name: "Hyundai Exter", price: "₹6.13 - ₹10.28 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbac0?auto=format&fit=crop&q=80&w=600" },
+        { slug: "maruti-suzuki-fronx", name: "Maruti Suzuki Fronx", price: "₹7.51 - ₹13.04 Lakh", type: "Compact", rating: 4.3, img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=600" },
+        { slug: "nissan-magnite", name: "Nissan Magnite", price: "₹6.00 - ₹11.11 Lakh", type: "SUV", rating: 4.2, img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
       title: "Best Cars Between ₹10 - ₹20 Lakhs", 
       badge: "MODERN",
       cars: [
-        { name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600" },
-        { name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" },
-        { name: "Volkswagen Taigun", price: "₹11.70 - ₹20.00 Lakh", type: "SUV", rating: 4.6, img: "https://images.unsplash.com/photo-1587652758178-5d259e87909a?auto=format&fit=crop&q=80&w=600" },
-        { name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600" }
+        { slug: "kia-seltos", name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600" },
+        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" },
+        { slug: "volkswagen-taigun", name: "Volkswagen Taigun", price: "₹11.70 - ₹20.00 Lakh", type: "SUV", rating: 4.6, img: "https://images.unsplash.com/photo-1587652758178-5d259e87909a?auto=format&fit=crop&q=80&w=600" },
+        { slug: "maruti-grand-vitara", name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", type: "SUV", rating: 4.4, img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600" }
       ]
     },
     { 
       title: "Best Cars Between ₹20 - ₹30 Lakhs", 
       badge: "PREMIUM",
       cars: [
-        { name: "Mahindra XUV700", price: "₹13.99 - ₹26.99 Lakh", type: "SUV", rating: 4.9, img: "https://images.unsplash.com/photo-1526726533068-583a137d70bc?auto=format&fit=crop&q=80&w=600" },
-        { name: "Tata Safari", price: "₹16.19 - ₹27.34 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600" },
-        { name: "Toyota Innova Hycross", price: "₹19.77 - ₹30.98 Lakh", type: "MPV", rating: 4.8, img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600" },
-        { name: "Jeep Compass", price: "₹20.69 - ₹32.41 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1539101105224-44ac053097ce?auto=format&fit=crop&q=80&w=600" }
+        { slug: "mahindra-xuv700", name: "Mahindra XUV700", price: "₹13.99 - ₹26.99 Lakh", type: "SUV", rating: 4.9, img: "https://images.unsplash.com/photo-1526726533068-583a137d70bc?auto=format&fit=crop&q=80&w=600" },
+        { slug: "tata-safari", name: "Tata Safari", price: "₹16.19 - ₹27.34 Lakh", type: "SUV", rating: 4.7, img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600" },
+        { slug: "toyota-innova-hycross", name: "Toyota Innova Hycross", price: "₹19.77 - ₹30.98 Lakh", type: "MPV", rating: 4.8, img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600" },
+        { slug: "jeep-compass", name: "Jeep Compass", price: "₹20.69 - ₹32.41 Lakh", type: "SUV", rating: 4.5, img: "https://images.unsplash.com/photo-1539101105224-44ac053097ce?auto=format&fit=crop&q=80&w=600" }
       ]
     }
   ];
 
   const luxuryCars = [
-    { name: "Mercedes-Benz CLA Electric", price: "₹55 - ₹59 Lakh", type: "EV", rating: 4.9, img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600" },
-    { name: "BMW 2 Series Gran Coupe", price: "₹43 - ₹46 Lakh", type: "Sedan", rating: 4.7, img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600" },
-    { name: "Audi A4", price: "₹46 - ₹54 Lakh", type: "Sedan", rating: 4.6, img: "https://images.unsplash.com/photo-1606148664006-0e5414300487?auto=format&fit=crop&q=80&w=600" },
-    { name: "Land Rover RR Velar", price: "₹94 Lakh+", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1519750783826-e2420f4d687f?auto=format&fit=crop&q=80&w=600" }
+    { slug: "mercedes-benz-cla-electric", name: "Mercedes-Benz CLA Electric", price: "₹55 - ₹59 Lakh", type: "EV", rating: 4.9, img: "https://images.unsplash.com/photo-1617788138017-80ad42243c59?auto=format&fit=crop&q=80&w=600" },
+    { slug: "bmw-2-series", name: "BMW 2 Series Gran Coupe", price: "₹43 - ₹46 Lakh", type: "Sedan", rating: 4.7, img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600" },
+    { slug: "audi-a4", name: "Audi A4", price: "₹46 - ₹54 Lakh", type: "Sedan", rating: 4.6, img: "https://images.unsplash.com/photo-1606148664006-0e5414300487?auto=format&fit=crop&q=80&w=600" },
+    { slug: "land-rover-velar", name: "Land Rover RR Velar", price: "₹94 Lakh+", type: "SUV", rating: 4.8, img: "https://images.unsplash.com/photo-1519750783826-e2420f4d687f?auto=format&fit=crop&q=80&w=600" }
   ];
 
   const offers = [
@@ -107,7 +107,10 @@ export default function Home() {
                         <h3 className="h3" style={{ fontSize: "1.1rem" }}>{car.name}</h3>
                         <p style={{ fontWeight: "800", color: "var(--secondary)", marginTop: "0.25rem" }}>{car.price}</p>
                       </div>
-                      <button className="btn btn-outline" style={{ width: "100%", marginTop: "1.5rem" }}>Check On-Road Price</button>
+                      <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.5rem" }}>
+                         <Link href={`/car/${car.slug}`} className="btn btn-primary" style={{ flex: 1, textAlign: "center", fontSize: "0.8rem", padding: "0.75rem" }}>Details</Link>
+                         <button className="btn btn-outline" style={{ flex: 1, fontSize: "0.8rem", padding: "0.75rem" }}>Price</button>
+                      </div>
                    </div>
                 </div>
               ))}
@@ -135,9 +138,8 @@ export default function Home() {
                 <div style={{ padding: "1.5rem" }}>
                   <h3 className="h3" style={{ color: "var(--white)", fontSize: "1.25rem" }}>{car.name}</h3>
                   <p style={{ color: "#f59e0b", fontWeight: "800", marginTop: "0.5rem" }}>{car.price}</p>
-                  <div style={{ marginTop: "1rem", display: "flex", gap: "1rem", fontSize: "0.85rem", opacity: 0.7 }}>
-                    <Zap size={14} /> <span>{car.type}</span>
-                    <ShieldCheck size={14} /> <span>Premium</span>
+                  <div style={{ marginTop: "1rem", display: "flex", gap: "1rem" }}>
+                    <Link href={`/car/${car.slug}`} style={{ color: "var(--white)", fontWeight: "800", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>VIEW DETAILS <ChevronRight size={14} /></Link>
                   </div>
                 </div>
               </div>
