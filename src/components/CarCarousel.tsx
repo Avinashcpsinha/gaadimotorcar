@@ -6,12 +6,12 @@ import { Star, ChevronRight, Fuel, Gauge, Zap } from "lucide-react";
 
 const carouselData = {
   trending: [
-    { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png?isig=0&q=80", type: "SUV", rating: 4.8 },
-    { slug: "hyundai-creta", name: "Hyundai Creta", price: "₹11.00 - ₹20.15 Lakh", img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-6.png?isig=0&q=80", type: "SUV", rating: 4.7 },
-    { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/144681/virtus-exterior-right-front-three-quarter-11.png?isig=0&q=80", type: "Sedan", rating: 4.6 }
+    { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/Scorpio-N/10817/1690351800434/front-left-side-47.jpg", type: "SUV", rating: 4.8 },
+    { slug: "hyundai-creta", name: "Hyundai Creta", price: "₹11.00 - ₹20.15 Lakh", img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/10543/1689601004345/front-left-side-47.jpg", type: "SUV", rating: 4.7 },
+    { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Volkswagen/Virtus/10834/1690358400434/front-left-side-47.jpg", type: "Sedan", rating: 4.6 }
   ],
   popular: [
-    { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png?isig=0&q=80", type: "EV", rating: 4.5 },
+    { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV/10852/1690365004345/front-left-side-47.jpg", type: "EV", rating: 4.5 },
     { slug: "kia-seltos", name: "Kia Seltos", price: "₹10.90 - ₹20.35 Lakh", img: "https://images.unsplash.com/photo-1609527727670-34907937397b?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.7 },
     { slug: "maruti-grand-vitara", name: "Maruti Grand Vitara", price: "₹10.80 - ₹20.09 Lakh", img: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=600", type: "SUV", rating: 4.4 }
   ],

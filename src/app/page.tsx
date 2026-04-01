@@ -14,10 +14,10 @@ export default function Home() {
       title: "Trending Cars this Month", 
       badge: "POPULAR",
       cars: [
-        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png?isig=0&q=80" },
-        { slug: "hyundai-creta", name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-6.png?isig=0&q=80" },
-        { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/144681/virtus-exterior-right-front-three-quarter-11.png?isig=0&q=80" },
-        { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png?isig=0&q=80" }
+        { slug: "mahindra-scorpio-n", name: "Mahindra Scorpio-N", price: "₹13.85 - ₹24.54 Lakh", type: "SUV", rating: 4.8, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/Scorpio-N/10817/1690351800434/front-left-side-47.jpg" },
+        { slug: "hyundai-creta", name: "Hyundai Creta Facelift", price: "₹11.00 - ₹20.15 Lakh", type: "SUV", rating: 4.7, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/10543/1689601004345/front-left-side-47.jpg" },
+        { slug: "volkswagen-virtus", name: "Volkswagen Virtus", price: "₹11.56 - ₹19.41 Lakh", type: "Sedan", rating: 4.6, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Volkswagen/Virtus/10834/1690358400434/front-left-side-47.jpg" },
+        { slug: "tata-nexon-ev", name: "Tata Nexon.ev", price: "₹14.49 - ₹19.49 Lakh", type: "EV", rating: 4.5, img: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV/10852/1690365004345/front-left-side-47.jpg" }
       ]
     },
     { 
