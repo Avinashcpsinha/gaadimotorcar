@@ -1,3 +1,5 @@
+"use client";
+import React, { Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BrandGrid from "@/components/BrandGrid";
@@ -8,8 +10,12 @@ import { ChevronRight, ArrowRight, Star, Clock, Trophy } from "lucide-react";
 export default function Home() {
   return (
     <main>
-      <Header />
-      <Hero />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Hero />
+      </Suspense>
       
       {/* Search by Body Type - New Dense Section */}
       <section className="section-padding">
