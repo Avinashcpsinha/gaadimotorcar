@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { submitLead } from "./actions";
 import { CheckCircle2, AlertCircle, Loader2, ChevronRight } from "lucide-react";
+import styles from "./jlr.module.css";
 
 const MODELS = [
   "Range Rover",
@@ -61,19 +62,20 @@ export default function LeadForm() {
 
   if (success) {
     return (
-      <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl text-center animate-fade">
-        <div className="flex justify-center mb-6">
-          <div className="bg-emerald-500/20 p-4 rounded-full">
-            <CheckCircle2 className="w-12 h-12 text-emerald-400" />
+      <div className={`${styles.glassCard} ${styles.successCard}`}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
+          <div style={{ background: "rgba(16, 185, 129, 0.2)", padding: "1rem", borderRadius: "9999px" }}>
+            <CheckCircle2 color="#10b981" size={48} />
           </div>
         </div>
-        <h2 className="text-3xl font-bold text-white mb-4 font-display">Thank You</h2>
-        <p className="text-gray-400 max-w-sm mx-auto mb-8">
-          Your interest in Jaguar Land Rover has been registered. Our relationship manager will contact you shortly to schedule your personalized experience.
+        <h2 className={styles.title} style={{ fontSize: "2rem", marginBottom: "1rem" }}>Thank You</h2>
+        <p className={styles.description} style={{ fontSize: "1rem", marginBottom: "2rem", maxWidth: "300px", margin: "0 auto 2rem" }}>
+          Your interest in Jaguar Land Rover has been registered. Our relationship manager will contact you shortly.
         </p>
         <button 
           onClick={() => setSuccess(false)}
-          className="text-white/60 hover:text-white transition-colors text-sm font-medium underline underline-offset-4"
+          className={styles.label}
+          style={{ cursor: "pointer", textDecoration: "underline", border: "none", background: "none" }}
         >
           Submit another request
         </button>
@@ -82,139 +84,99 @@ export default function LeadForm() {
   }
 
   return (
-    <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl shadow-2xl relative overflow-hidden group">
-      {/* Decorative gradient overlay */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700"></div>
-      
-      <h2 className="text-2xl font-bold text-white mb-8 font-display flex items-center gap-3">
+    <div className={styles.glassCard}>
+      <h2 className={styles.featureTitle} style={{ fontSize: "1.5rem", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
         Register Your Interest
-        <div className="h-px bg-white/20 flex-1"></div>
+        <div style={{ height: "1px", background: "rgba(255,255,255,0.1)", flex: 1 }}></div>
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">First Name *</label>
-            <input
-              name="firstName"
-              required
-              placeholder="e.g. John"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
-            />
+      <form onSubmit={handleSubmit} className={styles.formGrid}>
+        <div className={`${styles.formGrid} ${styles.col2}`} style={{ gap: "1.5rem" }}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>First Name *</label>
+            <input name="firstName" required placeholder="e.g. John" className={styles.input} />
           </div>
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Last Name *</label>
-            <input
-              name="lastName"
-              required
-              placeholder="e.g. Doe"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
-            />
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Last Name *</label>
+            <input name="lastName" required placeholder="e.g. Doe" className={styles.input} />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Mobile Number *</label>
-            <input
-              name="mobile"
-              required
-              placeholder="+91 00000 00000"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
-            />
+        <div className={`${styles.formGrid} ${styles.col2}`} style={{ gap: "1.5rem" }}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Mobile Number *</label>
+            <input name="mobile" required placeholder="+91 00000 00000" className={styles.input} />
           </div>
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Email Address *</label>
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder="john.doe@example.com"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
-            />
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Email Address *</label>
+            <input name="email" type="email" required placeholder="john.doe@example.com" className={styles.input} />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">State *</label>
+        <div className={`${styles.formGrid} ${styles.col3}`} style={{ gap: "1.5rem" }}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>State *</label>
             <select
               name="state"
               required
               onChange={(e) => setSelectedState(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer"
+              className={styles.select}
             >
-              <option value="" className="bg-gray-900">Select State</option>
-              {STATES.map(s => <option key={s} value={s} className="bg-gray-900">{s}</option>)}
+              <option value="" style={{ background: "#111" }}>Select State</option>
+              {STATES.map(s => <option key={s} value={s} style={{ background: "#111" }}>{s}</option>)}
             </select>
           </div>
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">City *</label>
-            <select
-              name="city"
-              required
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer"
-            >
-              <option value="" className="bg-gray-900">Select City</option>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>City *</label>
+            <select name="city" required className={styles.select}>
+              <option value="" style={{ background: "#111" }}>Select City</option>
               {selectedState && CITIES[selectedState]?.map(c => (
-                <option key={c} value={c} className="bg-gray-900">{c}</option>
+                <option key={c} value={c} style={{ background: "#111" }}>{c}</option>
               ))}
             </select>
           </div>
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Zip Code</label>
-            <input
-              name="zipCode"
-              placeholder="000 000"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 transition-all"
-            />
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Zip Code</label>
+            <input name="zipCode" placeholder="000 000" className={styles.input} />
           </div>
         </div>
 
-        <div className="space-y-2">
-          <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Model of Interest *</label>
-          <select
-            name="modelOfInterest"
-            required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer"
-          >
-            <option value="" className="bg-gray-900">Choose your model</option>
-            {MODELS.map(m => <option key={m} value={m} className="bg-gray-900">{m}</option>)}
+        <div className={styles.fieldGroup}>
+          <label className={styles.label}>Model of Interest *</label>
+          <select name="modelOfInterest" required className={styles.select}>
+            <option value="" style={{ background: "#111" }}>Choose your model</option>
+            {MODELS.map(m => <option key={m} value={m} style={{ background: "#111" }}>{m}</option>)}
           </select>
         </div>
 
-        <div className="space-y-2">
-          <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">Comments *</label>
+        <div className={styles.fieldGroup}>
+          <label className={styles.label}>Comments *</label>
           <textarea
             name="comments"
             required
             rows={4}
             placeholder="Tell us about your requirements..."
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 transition-all resize-none"
+            className={styles.textarea}
           />
         </div>
 
         {error && (
-          <div className="bg-rose-500/10 border border-rose-500/20 text-rose-400 p-4 rounded-lg flex items-center gap-3 animate-fade">
-            <AlertCircle className="w-5 h-5 flex-shrink-0" />
-            <p className="text-sm">{error}</p>
+          <div style={{ background: "rgba(244, 63, 94, 0.1)", border: "1px solid rgba(244, 63, 94, 0.2)", color: "#fb7185", padding: "1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <AlertCircle size={20} />
+            <p style={{ fontSize: "0.875rem" }}>{error}</p>
           </div>
         )}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-primary hover:bg-primary-hover disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 flex items-center justify-center gap-3 transition-all group/btn"
-        >
+        <button type="submit" disabled={loading} className={styles.submitBtn}>
           {loading ? (
             <>
-              <Loader2 className="w-5 h-5 animate-spin" />
+              <Loader2 size={20} className="animate-spin" />
               Processing...
             </>
           ) : (
             <>
               Submit Request
-              <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              <ChevronRight size={20} />
             </>
           )}
         </button>
